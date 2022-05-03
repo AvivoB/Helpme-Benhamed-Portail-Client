@@ -48,10 +48,22 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Accueil</a></li>
-          <li><a class="nav-link scrollto" href="#services">Nos services</a></li>
-          <li><a class="nav-link   scrollto" href="#pricing">Les tarifs</a></li>
-          <li><a class="getstarted scrollto" href="#">Connexion</a></li>
+          <li><a class="nav-link scrollto active" href="/#hero">Accueil</a></li>
+          <li><a class="nav-link scrollto" href="/#services">Nos services</a></li>
+          <li><a class="nav-link   scrollto" href="/#pricing">Les tarifs</a></li>
+          @auth
+          <li>
+            <form action="{{ route('logout') }}" method="post">
+              @csrf
+              <button class="getstarted scrollto" href="/#">Déconnexion</button>
+            </form>
+          </li>
+          @else
+          <button type="button" class="getstarted" data-toggle="modal" data-target="#exampleModal">
+            Connexion
+          </button>
+          
+          @endauth
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

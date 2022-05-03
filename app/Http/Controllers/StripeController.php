@@ -35,9 +35,10 @@ class StripeController extends Controller
 
         Auth::login($user);
         
+        Session::flash('success', 'Paiement effectué, bienvenue sur votre espace client!');
+        
         return redirect()->route('home');
    
-        Session::flash('success', 'Paiement effectué, bienvenue sur votre espace client!');
     }
 
 }
