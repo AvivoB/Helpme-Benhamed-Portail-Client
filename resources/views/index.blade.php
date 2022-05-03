@@ -109,16 +109,15 @@
     <section id="pricing" class="pricing">
       <div class="container" data-aos="fade-up">
 
-        <div class="section-title">
-          <h2>Les tarifs</h2>
-        </div>
-
         <div class="row">
 
-          <div class="col-lg-12 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-6 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="200">
             <div class="box featured">
               <div class="row">
-                <div class="col">
+                <div class="section-title">
+                  <h2>Inscription</h2>
+                </div>
+                <div class="col-4">
                   <h4><sup>$</sup>550<span>par mois</span></h4>
                   <ul>
                     <li><i class="bx bx-check"></i> Heures illimité</li>
@@ -146,25 +145,25 @@
                   @endif
                     <h2>1. Paiement par carte bancaire</h2>
                     <div class='form-row row'>
-                      <div class='col-6 form-group required'>
+                      <div class='col-12 form-group required'>
                          <label class='control-label'>Nom sur la carte</label> 
                          <input class='form-control' placeholder="John Doe" type='text'>
                       </div>
-                      <div class='col-6 form-group required'>
+                      <div class='col-12 form-group required'>
                          <label class='control-label '>Numéro de carte</label> 
                          <input class='form-control card-number' placeholder="4242 4242 4242 4242" size='4' type='text'>
                       </div>
-                      <div class='mt-3 col-4 form-group cvc required'>
+                      <div class='mt-3 col-12 form-group cvc required'>
                          <label class='control-label'>CVC</label> <input autocomplete='off'
                             class='form-control card-cvc' placeholder='ex. 311' size='4'
                             type='text'>
                       </div>
-                      <div class='mt-3 col-4 form-group expiration required'>
+                      <div class='mt-3 col-12 form-group expiration required'>
                          <label class='control-label'>Mois d'expiration</label> <input
                             class='form-control card-expiry-month' placeholder='MM' size='2'
                             type='text'>
                       </div>
-                      <div class='mt-3 col-4 form-group expiration required'>
+                      <div class='mt-3 col-12 form-group expiration required'>
                          <label class='control-label'>Année d'expriration</label> <input
                             class='form-control card-expiry-year' placeholder='AAAA' size='4'
                             type='text'>
@@ -177,11 +176,11 @@
 
                    <h2 class="mt-5">2. Créez votre compte</h2>
                    <div class='form-row row'>
-                    <div class='col-6 form-group required'>
+                    <div class='col-12 form-group required'>
                        <label class='control-label'>Adresse E-mail</label> 
                        <input class='form-control' type='text' name="email">
                     </div>
-                    <div class='col-6 form-group required'>
+                    <div class='col-12 form-group required'>
                        <label class='control-label'>Mot de passe</label> 
                        <input class='form-control' type='password' name="password">
                     </div>
@@ -195,12 +194,36 @@
                   </form>
                 </div>
               </div>
-
-            </div>
-            
           </div>
+          <div class="col-lg-6 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="200">
+            <div class="box featured">
+              <div class="row">
+                <div class="section-title">
+                  <h2>Connexion</h2>
+                </div>
+                <div class="col">
+                  <form  action="{{ route('login') }}" method="post" class="form">
+                  @csrf
+                   <div class='form-row row'>
+                    <div class='col-12 form-group required'>
+                       <label class='control-label'>Adresse E-mail</label> 
+                       <input class='form-control' type='text' name="email">
+                    </div>
+                    <div class='col-12 form-group required'>
+                       <label class='control-label'>Mot de passe</label> 
+                       <input class='form-control' type='password' name="password">
+                    </div>
+                    </div>
+                    
 
-          <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="200">
+                    <div class="mt-3">
+                      <button class="btn" type="submit">Se connecter</button>
+                    </div>
+                  </form>
+                </div>
+                </div>
+              </div>
+          </div>
             
           </div>
 
