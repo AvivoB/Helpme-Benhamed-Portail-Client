@@ -30,6 +30,29 @@
         </div>
         @endif
 
+        @if (Session::has('services1'))
+        <div class="alert alert-success text-center">
+          <p>{{ Session::get('services1') }}</p>
+        </div>
+        @endif
+        @if (Session::has('services2'))
+        <div class="alert alert-success text-center">
+          <p>{{ Session::get('services2') }}</p>
+        </div>
+        @endif
+        @if (Session::has('services3'))
+        <div class="alert alert-success text-center">
+          <p>{{ Session::get('services3') }}</p>
+        </div>
+        @endif
+        @if (Session::has('services4'))
+        <div class="alert alert-success text-center">
+          <p>{{ Session::get('services4') }}</p>
+        </div>
+        @endif
+
+
+
         <div class="section-title">
           <h2>Mon compte</h2>
           <p>Gérez votre compte ici</p>

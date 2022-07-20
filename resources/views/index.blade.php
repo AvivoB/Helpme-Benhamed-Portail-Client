@@ -66,13 +66,22 @@
         <div class="section-title">
           <h2>Nos services</h2>
         </div>
-
+        <form 
+        action="{{ route('stripe.post') }}"
+        method="post"
+        class="require-validation"
+        data-cc-on-file="false"
+        data-stripe-publishable-key="{{ env('STRIPE_KEY') }}"
+        id="payment-form"
+        class="form">
+        @csrf
         <div class="row">
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><i class="bx bxl-dribbble"></i></div>
               <h4><a href="">Aide à domicile</a></h4>
               <p>Nos intervenants pour vous disponible selon vos choix</p>
+              <input type="checkbox" name="prixAide" value="service d'aide a domicile">
             </div>
           </div>
 
@@ -81,6 +90,7 @@
               <div class="icon"><i class="bx bx-file"></i></div>
               <h4><a href="">Service d'aide administratif</a></h4>
               <p>Confiez la gestion de vos dossiers a nos intervenants</p>
+              <input type="checkbox" name="prixServiceAdministratif" value="service d'aide administratif">
             </div>
           </div>
 
@@ -89,6 +99,8 @@
               <div class="icon"><i class="bx bx-tachometer"></i></div>
               <h4><a href="">Service de transport</a></h4>
               <p>Déplacez vous rapidement et simplement grace a nos chauffeur et transporteurs</p>
+              <input type="checkbox" name="prixServiceTransport" value="service de transport">
+
             </div>
           </div>
 
@@ -97,7 +109,11 @@
               <div class="icon"><i class="bx bx-layer"></i></div>
               <h4><a href="">Gestion facile</a></h4>
               <p>Confiez nous la gestion de votre temps pour l'optimiser</p>
+              <input type="checkbox" name="prixGestionFacile" value="service de gestion">
             </div>
+          </div>
+
+          <div class="row">
           </div>
 
         </div>
@@ -115,28 +131,11 @@
             <div class="box featured">
               <div class="row">
                 <div class="section-title">
+                  <h1 class="text-center mt-3">Total : <span id="priceTotal">550</span> €</h1>
                   <h2>Inscription</h2>
                 </div>
-                <div class="col-4">
-                  <h4><sup>$</sup>550<span>par mois</span></h4>
-                  <ul>
-                    <li><i class="bx bx-check"></i> Heures illimité</li>
-                    <li><i class="bx bx-check"></i> Transport illimité</li>
-                    <li><i class="bx bx-check"></i> Gestion du temps</li>
-                    <li><i class="bx bx-check"></i> Sans engagement</li>
-                    <li><i class="bx bx-check"></i> Aide à domicile</li>
-                  </ul>
-                </div>
                 <div class="col">
-                  <form 
-                  action="{{ route('stripe.post') }}"
-                  method="post"
-                  class="require-validation"
-                  data-cc-on-file="false"
-                  data-stripe-publishable-key="{{ env('STRIPE_KEY') }}"
-                  id="payment-form"
-                  class="form">
-                  @csrf
+
                   @if (Session::has('success'))
                      <div class="alert alert-success text-center">
                         <a href="#" class="close" data-dismiss="alert">×</a>
@@ -287,4 +286,5 @@
         }
     }
 });
+
    </script>
